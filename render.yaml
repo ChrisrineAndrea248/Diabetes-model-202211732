@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: diabetes-predict-app-202211732
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+    runtime: python
+    autoDeploy: true
+    envVars:
+      - key: PORT
+        value: 10000  # optional: Render will auto-set this unless overridden

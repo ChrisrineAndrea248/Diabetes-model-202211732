@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diabetes Prediction</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            padding: 40px;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            margin: auto;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        input[type="number"], input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            margin-bottom: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            font-weight: bold;
+        }
+        .result {
+            text-align: center;
+            font-size: 1.2em;
+            color: #000;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Diabetes Prediction</h2>
+        <form method="POST">
+            <label>Pregnancies:</label>
+            <input type="number" name="Pregnancies" required>
+
+            <label>Glucose:</label>
+            <input type="number" name="Glucose" required>
+
+            <label>Blood Pressure:</label>
+            <input type="number" name="BloodPressure" required>
+
+            <label>Skin Thickness:</label>
+            <input type="number" name="SkinThickness" required>
+
+            <label>Insulin:</label>
+            <input type="number" name="Insulin" required>
+
+            <label>BMI:</label>
+            <input type="number" name="BMI" step="any" required>
+
+            <label>Diabetes Pedigree Function:</label>
+            <input type="number" name="DiabetesPedigreeFunction" step="any" required>
+
+            <label>Age:</label>
+            <input type="number" name="Age" required>
+
+            <input type="submit" value="Predict">
+        </form>
+        {% if result %}
+            <div class="result">
+                <strong>Prediction: {{ result }}</strong>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
