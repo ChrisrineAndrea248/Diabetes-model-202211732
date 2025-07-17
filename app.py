@@ -4,8 +4,8 @@ import joblib
 import os
 
 # Load model and scaler
-model = joblib.load("diabetes_model.pkl")
-scaler = joblib.load("scaler.pkl")
+model = joblib.load("diabetes_model_202211732.pkl")
+scaler = joblib.load("scaler-for-render.pkl")
 
 app = Flask(__name__)
 
